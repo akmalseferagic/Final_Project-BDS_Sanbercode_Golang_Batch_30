@@ -1,0 +1,1633 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "paths": {
+        "/brand": {
+            "get": {
+                "description": "Get a list of Brand.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Brand"
+                ],
+                "summary": "Get all Brand.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Brand"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Creating a new Brand.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Brand"
+                ],
+                "summary": "Create New Brand.",
+                "parameters": [
+                    {
+                        "description": "the body to create a new Brand",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.brandInput"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Brand"
+                        }
+                    }
+                }
+            }
+        },
+        "/brand/{id}": {
+            "get": {
+                "description": "Get an Brand by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Brand"
+                ],
+                "summary": "Get Brand.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Brand id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Brand"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Delete a Brand by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Brand"
+                ],
+                "summary": "Delete one Brand.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Brand id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Update Brand by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Brand"
+                ],
+                "summary": "Update Brand.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Brand id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "the body to update brand",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.brandInput"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Brand"
+                        }
+                    }
+                }
+            }
+        },
+        "/brand/{id}/devices": {
+            "get": {
+                "description": "Get all Devices by BrandId.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Brand"
+                ],
+                "summary": "Get Devices.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Brand id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Devices"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/comments": {
+            "get": {
+                "description": "Get a list of Comments.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Get all Comments.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Comments"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creating a new Comments.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Create New Comments.",
+                "parameters": [
+                    {
+                        "description": "the body to create a new Comments",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.commentsInput"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Comments"
+                        }
+                    }
+                }
+            }
+        },
+        "/comments/{id}": {
+            "get": {
+                "description": "Get an Comments by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Get Comments.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Comments id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Comments"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Delete a Comments by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Delete one Comments.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Comments id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Update Comments by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Update Comments.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Comments id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "the body to update comments",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.commentsInput"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Comments"
+                        }
+                    }
+                }
+            }
+        },
+        "/devices": {
+            "get": {
+                "description": "Get a list of Devices.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Get all Devices.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Devices"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Creating a new Devices.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Create New Devices.",
+                "parameters": [
+                    {
+                        "description": "the body to create a new Devices",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.devicesInput"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Devices"
+                        }
+                    }
+                }
+            }
+        },
+        "/devices/{id}": {
+            "get": {
+                "description": "Get an Devices by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Get Devices.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Devices id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Devices"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Delete a Devices by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Delete one Devices.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Devices id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Update Devices by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Update Devices.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Devices id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "the body to update devices",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.devicesInput"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Devices"
+                        }
+                    }
+                }
+            }
+        },
+        "/devices/{id}/comments": {
+            "get": {
+                "description": "Get all Opinion by DevicesId.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Get Comments By id Devices.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Devices id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Comments"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "description": "Logging in to get jwt token to access admin or user api by roles.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login as as user.",
+                "parameters": [
+                    {
+                        "description": "the body to login a user",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.LoginInput"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/opinions": {
+            "get": {
+                "description": "Get a list of Opinions.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Opinions"
+                ],
+                "summary": "Get all Opinions.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Opinions"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creating a new Opinions.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Opinions"
+                ],
+                "summary": "Create New Opinions.",
+                "parameters": [
+                    {
+                        "description": "the body to create a new Opinions",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.opinionsInput"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Opinions"
+                        }
+                    }
+                }
+            }
+        },
+        "/opinions/{id}": {
+            "get": {
+                "description": "Get an Opinions by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Opinions"
+                ],
+                "summary": "Get Opinions.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Opinions id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Opinions"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Delete a Opinions by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Opinions"
+                ],
+                "summary": "Delete one Opinions.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Opinions id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Update Opinions by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Opinions"
+                ],
+                "summary": "Update Opinions.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Opinions id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "the body to update opinions",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.opinionsInput"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Opinions"
+                        }
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "description": "registering a user from public access.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Register a user.",
+                "parameters": [
+                    {
+                        "description": "the body to register a user",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.RegisterInput"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/reviews": {
+            "get": {
+                "description": "Get a list of Reviews.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Reviews"
+                ],
+                "summary": "Get all Reviews.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Reviews"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Creating a new Reviews.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Reviews"
+                ],
+                "summary": "Create New Reviews.",
+                "parameters": [
+                    {
+                        "description": "the body to create a new Reviews",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.reviewsInput"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Reviews"
+                        }
+                    }
+                }
+            }
+        },
+        "/reviews/{id}": {
+            "get": {
+                "description": "Get an Reviews by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Reviews"
+                ],
+                "summary": "Get Reviews.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Reviews id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Reviews"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Delete a Reviews by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Reviews"
+                ],
+                "summary": "Delete one Reviews.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Reviews id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Update Reviews by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Reviews"
+                ],
+                "summary": "Update Reviews.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Reviews id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "the body to update reviews",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.reviewsInput"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Reviews"
+                        }
+                    }
+                }
+            }
+        },
+        "/reviews/{id}/comments": {
+            "get": {
+                "description": "Get all Opinion by ReviewsId.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Reviews"
+                ],
+                "summary": "Get Comments By id Reviews.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Reviews id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Comments"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/reviews/{id}/opinions": {
+            "get": {
+                "description": "Get all Opinion by ReviewsId.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Reviews"
+                ],
+                "summary": "Get Opinions By id Reviews.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Reviews id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Opinions"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/specification": {
+            "get": {
+                "description": "Get a list of Specification.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Specification"
+                ],
+                "summary": "Get all Specification.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Specification"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Creating a new Specification.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Specification"
+                ],
+                "summary": "Create New Specification.",
+                "parameters": [
+                    {
+                        "description": "the body to create a new Specification",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.specificationInput"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Specification"
+                        }
+                    }
+                }
+            }
+        },
+        "/specification/{id}": {
+            "get": {
+                "description": "Get an Specification by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Specification"
+                ],
+                "summary": "Get Specification.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Specification id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Specification"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Delete a Specification by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Specification"
+                ],
+                "summary": "Delete one Specification.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Specification id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ],
+                "description": "Update Specification by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Specification"
+                ],
+                "summary": "Update Specification.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Specification id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "the body to update age specification category",
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.specificationInput"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authorization. How to input in swagger : 'Bearer \u003cinsert_your_token_here\u003e'",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Specification"
+                        }
+                    }
+                }
+            }
+        },
+        "/specification/{id}/devices": {
+            "get": {
+                "description": "Get all Devices by SpecificationId.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Specification"
+                ],
+                "summary": "Get Devices.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Specification id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Devices"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "controller.LoginInput": {
+            "type": "object",
+            "required": [
+                "password",
+                "username"
+            ],
+            "properties": {
+                "password": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "controller.RegisterInput": {
+            "type": "object",
+            "required": [
+                "email",
+                "password",
+                "username"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "controller.brandInput": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "controller.commentsInput": {
+            "type": "object",
+            "properties": {
+                "comments_section": {
+                    "type": "string"
+                },
+                "devices_id": {
+                    "type": "integer"
+                },
+                "reviews_id": {
+                    "type": "integer"
+                },
+                "your_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "controller.devicesInput": {
+            "type": "object",
+            "properties": {
+                "brand_id": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "string"
+                },
+                "specification_id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "controller.opinionsInput": {
+            "type": "object",
+            "properties": {
+                "opinion_section": {
+                    "type": "string"
+                },
+                "reviews_id": {
+                    "type": "integer"
+                },
+                "your_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "controller.reviewsInput": {
+            "type": "object",
+            "properties": {
+                "article": {
+                    "type": "string"
+                },
+                "devices_id": {
+                    "type": "integer"
+                },
+                "name_article": {
+                    "type": "string"
+                }
+            }
+        },
+        "controller.specificationInput": {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "string"
+                },
+                "camera": {
+                    "type": "string"
+                },
+                "capacity_battery": {
+                    "type": "string"
+                },
+                "chipset": {
+                    "type": "string"
+                },
+                "launched": {
+                    "type": "string"
+                },
+                "os": {
+                    "type": "string"
+                },
+                "ram": {
+                    "type": "string"
+                },
+                "resolution_screen": {
+                    "type": "string"
+                },
+                "size_screen": {
+                    "type": "string"
+                },
+                "storage": {
+                    "type": "string"
+                },
+                "touch_screen": {
+                    "type": "string"
+                },
+                "video": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Brand": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Comments": {
+            "type": "object",
+            "properties": {
+                "comments_section": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "devicesID": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "reviewsID": {
+                    "type": "integer"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "your_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Devices": {
+            "type": "object",
+            "properties": {
+                "brandID": {
+                    "type": "integer"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "string"
+                },
+                "specificationID": {
+                    "type": "integer"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Opinions": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "opinion_section": {
+                    "type": "string"
+                },
+                "reviewsID": {
+                    "type": "integer"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "your_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Reviews": {
+            "type": "object",
+            "properties": {
+                "article": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "devicesID": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name_article": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Specification": {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "string"
+                },
+                "camera": {
+                    "type": "string"
+                },
+                "capacity_battery": {
+                    "type": "string"
+                },
+                "chipset": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "launched": {
+                    "type": "string"
+                },
+                "os": {
+                    "type": "string"
+                },
+                "ram": {
+                    "type": "string"
+                },
+                "resolution_screen": {
+                    "type": "string"
+                },
+                "size_screen": {
+                    "type": "string"
+                },
+                "storage": {
+                    "type": "string"
+                },
+                "touch_screen": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "video": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
